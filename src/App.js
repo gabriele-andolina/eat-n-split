@@ -20,5 +20,23 @@ const initialFriends = [
 ];
 
 export default function App() {
-    return <div>Hello!</div>;
+    return (
+        <div className="app">
+            <div className="sidebar">
+                <FriendsList />
+            </div>
+        </div>
+    );
+}
+
+function FriendsList() {
+    const friends = initialFriends;
+
+    return (
+        <ul>
+            {friends.map((friend) => (
+                <li>{friend.name}</li>
+            ))}
+        </ul>
+    );
 }
